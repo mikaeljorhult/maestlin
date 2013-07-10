@@ -23,3 +23,6 @@ To apply a specific aspect ratio you can pass in the parameter ratio. Following 
 
 ## License
 Maestlin is released under the [MIT license](http://mikaeljorhult.mit-license.org).
+
+## Plugin Name
+The plugin is named after the German astronomer [Michael Maestlin](http://en.wikipedia.org/wiki/Michael_Maestlin) who did the first known calculation of the Golden Ratio.
