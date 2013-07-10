@@ -1,12 +1,9 @@
 /*!
- * Maestlin
+ * Maestlin 0.1.0
  * Aspect ratio jQuery plugin.
  * 
- * @version 0.1.0
  * @author Mikael Jorhult
  * @license http://mikaeljorhult.mit-license.org MIT
- *
- * Project repository: https://github.com/mikaeljorhult/maestlin
  */
 ;( function ( $, window, document, undefined ) {
 	// Default values
