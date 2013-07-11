@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Maestlin</title>
+		<link rel="stylesheet" type="text/css" href="style.css"
+	</head>
+	
+	<body>
+		<div id="element1">
+			&nbsp;
+		</div>
+		
+		<div id="element2" style="height: 200px;">
+			&nbsp;
+		</div>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script src="jquery.maestlin.min.js"></script>
+		<script>
+			$( '#element1' ).maestlin();
+			
+			$( '#element2' ).maestlin( {
+				ratio: 0.5
+			} );
+		</script>
+	</body>
+</html>
