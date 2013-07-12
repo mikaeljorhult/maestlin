@@ -1,5 +1,5 @@
 /*!
- * Maestlin 0.1.0
+ * Maestlin 1.0.0
  * Aspect ratio jQuery plugin.
  * 
  * @author Mikael Jorhult
@@ -14,44 +14,47 @@
 	
 	// Constructor
 	function Maestlin( element, options ) {
-		this.element = element;
+		this.element = $( element );
 		this.settings = $.extend( {}, defaults, options );
 		this._defaults = defaults;
 		this._name = pluginName;
 		this.init();
 	}
 	
+	// The actual action
 	Maestlin.prototype = {
 		init: function() {
-			this.setupRatio( this.element, this.settings );
-		},
-		setupRatio: function( elements, settings ) {
-			var $elements = $( elements ),
+			var elements = this.element,
 				resizer;
 			
-			$elements.each( function( index, element ) {
-				var ratio = settings.ratio;
-				
-				if ( settings.ratio === 'auto' ) {
-					ratio = element.clientHeight / element.clientWidth;
-				}
-				
-				$( element ).data( 'ratio', ratio );
-			} );
+			// Go through each element individually if ratio is "auto".
+			if ( this.settings.ratio === 'auto' ) {
+				elements.each( function( index, element ) {
+					$( element ).data( 'ratio', element.clientHeight / element.clientWidth );
+				} );
+			} else {
+				// Set same ratio to all elements.
+				elements.data( 'ratio', this.settings.ratio );
+			}
 			
+			// Declare resize function
 			resizer = function() {
-				$elements.each( function( index, element ) {
+				// Set the height of each element.
+				elements.each( function( index, element ) {
 					var $element = $( element );
 					$element.height( $element.width() * $element.data( 'ratio' ) );
 				} );
 			};
 			
+			// Run resize function once.
 			resizer();
 			
+			// Add reseize function to window resize event.
 			$( window ).on( 'resize', resizer );
 		}
 	};
 	
+	// Prevent against multiple instantiations.
 	$.fn[ pluginName ] = function( options ) {
 		return this.each( function() {
 			if ( !$.data( this, "plugin_" + pluginName ) ) {
