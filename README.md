@@ -1,5 +1,5 @@
 # Maestlin
-jQuery plugin helping elements to keep aspect ratio when resized.
+jQuery plugin helping elements to keep aspect ratio when resized. [See demo](http://mikaeljorhult.github.io/maestlin/).
 
 ## Basic Usage
 Basic usage is pretty straight forward:
