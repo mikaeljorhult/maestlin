@@ -1,26 +1,83 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="utf-8">
 		<title>Maestlin</title>
+		
 		<link rel="stylesheet" type="text/css" href="style.css" />
+		<script src="http://use.edgefonts.net/nixie-one.js"></script>
 	</head>
 	
 	<body>
-		<div id="element1">
-			&nbsp;
-		</div>
+		<header>
+			<h1>Maestlin</h1>
+			<p>A jQuery plugin helping elements to keep aspect ratio when resized. <a href="https://github.com/mikaeljorhult/maestlin">Download</a> it on GitHub.</p>
+		</header>
 		
-		<div id="element2" style="height: 200px;">
-			&nbsp;
-		</div>
+		<section class="main-content">
+			<h2>Examples</h2>
+			<p>See the plugin in action by resizing your browser. Blocks will keep the aspect ratio even when getting smaller.</p>
+			
+			<div class="examples clearfix">
+				<div class="column">
+					<div id="example1" class="example">
+						<span>auto</span>
+					</div>
+					
+					<div id="example2" class="example">
+						<span>1:1</span>
+					</div>
+					
+					<div id="example3" class="example">
+						<span>2:1</span>
+					</div>
+				</div>
+				
+				<div class="column">
+					<div id="example4" class="example">
+						<span>1:2</span>
+					</div>
+				</div>
+				
+				<div class="column">
+					<div id="example5" class="example">
+						<span>4:3</span>
+					</div>
+					
+					<div id="example6" class="example">
+						<span>16:9</span>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<footer>
+			Maestlin is created and maintained by <a href="http://jorhult.se">Mikael Jorhult</a>.
+		</footer>
 		
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<script src="jquery.maestlin.min.js"></script>
 		<script>
-			$( '#element1' ).maestlin();
+			$( '#example1' ).maestlin();
 			
-			$( '#element2' ).maestlin( {
+			$( '#example2' ).maestlin( {
+				ratio: 1
+			} );
+			
+			$( '#example3' ).maestlin( {
 				ratio: 0.5
+			} );
+			
+			$( '#example4' ).maestlin( {
+				ratio: 2
+			} );
+			
+			$( '#example5' ).maestlin( {
+				ratio: 0.75
+			} );
+			
+			$( '#example6' ).maestlin( {
+				ratio: 0.5625
 			} );
 		</script>
 	</body>
